@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./moew3.jpg">
+    <title> New release </title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+
+<style>
+*{
+    font-family: 'Poppins', sans-serif; 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+    transition:width none;
+}
+
+body {
+    background: url(./PGR1.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+:root{
+    --gradient-1: linear-gradient(to right, #3fe9ec 0%, #5213c6 100%); 
+    --gradient-2: linear-gradient(to right, #4674d7 0%, #4e0459 100%); 
+    --gradient-3: linear-gradient(90deg, transparent 0%, #9841ff 50%, transparent 100%);
+    --black:#444;
+    --light-color:#fffafa;
+    --border: 1rem solid rgba(0,0,0,.1);
+    --border-hover: .1rem solid var(black);
+    --box-shadow: 0 .5rem 1re, rgba(0,0,0,.1);
+
+
+    --bg-purple-alpha-30: hsla(267, 100%, 63%, 0.3);
+    --bg-purple: rgba(34, 173, 185, 0.87);
+    --bg-dark-purple: rgb(13, 32, 33);
+    --bg-oxford-blue: rgba(114, 209, 208, 0.81);
+
+}
+
+html {
+    font-size: 62, 5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    width: 1rem;
+}
+
+html::-webkit-scroolbar-track {
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--black);
+}
+
+
+section {
+    padding: 5rem 9%;
+}
+
+.heading {
+   text-align: center;
+   margin-bottom: 2rem;
+   position: relative;
+}
+
+.heading::before {
+   content: '';
+   position: absolute;
+   top: 50%;
+   left: 0;
+   transform: translateY(-50%);
+   width: 100%;
+   height: .01rem;
+   background: rgba(0, 0, 0, .1);
+   z-index: -1;
+}
+
+.heading {
+   font-size: 3rem;
+   padding: .5rem 2rem;
+   color: var(--light-color);
+   background: none;
+
+   /*
+   border: var(--border);
+   */
+} 
+
+span {
+    color: var(--bg-purple);
+}
+
+
+
+/*BTN*/
+
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    border-radius: .5rem;
+    color: #fff;
+    background: var(--gradient-1);
+    font-size: 1.7rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn:hover {
+    background: var(--gradient-2);
+}
+
+
+
+/*HEADER-1*/
+
+.header .header-1 {
+    background: var(--bg-oxford-blue);
+    padding: 1.5rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .header-1 .logo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--light-color);
+}
+
+.header .header-1 .logo i{
+    color: var(--light-color);
+}
+
+.header .header-1 .search-form {
+    width: 50rem;
+    height: 5rem;
+    border:var(--border);
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: .5rem;
+}
+
+.header .header-1 .search-form input{
+    font-size: 1.6rem;
+    padding:0 1.2rem;
+    height: 100%;
+    width: 100%;
+    text-transform: none;
+    color: var(--black);
+}
+
+.header .header-1 .search-form label {
+    font-size: 2.5rem;
+    padding-right: 1.5rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.header .header-1 .search-form label:hover { 
+    color: var(--gradient-1);
+}
+
+.header .header-1 .icons div, 
+.header .header-1 .icons a {
+    font-size:2.5rem;
+    margin-left:1.5rem;
+    color: var(--light-color);
+    cursor:pointer;
+}
+
+.header .header-1 .icons div:hover,
+.header .header-1 .icons a:hover {
+    color: var(--bg-purple);
+}
+
+#search-btn{
+    display: none;
+}
+
+
+
+
+
+/*HEADER-2*/
+
+.header .header-2 {
+    background: none;
+}
+
+.header .header-2 .navbar {
+    text-align: center;
+}
+
+.header .header-2 .navbar a{
+    color: #fff;
+    display: inline-block;
+    padding: 1.2rem;
+    font-size: 1.7rem;
+}
+
+.header .header-2 .navbar a:hover {
+    background: var(--bg-purple);
+}
+
+.header .header-2 .active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+
+
+
+/*BOTTOM-NAVBAR*/
+ 
+ 
+.bottom-navbar {
+    text-align: center;
+    background: var(--bg-oxford-blue);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: none;
+}
+
+.bottom-navbar a {
+    font-size: 2.5rem;
+    padding: 2rem;
+    color: #fff;
+}
+
+.bottom-navbar a:hover {
+    background: var(--bg-purple);
+}
+
+
+
+
+/*LOGIN-FORM*/
+
+.login-form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(./PGR2.png);
+    position: fixed;
+    top: 105%; 
+    left: 0; 
+    opacity: 0;
+    z-index: 10000;
+    height: 100%;
+    width: 100%;
+}
+
+.login-form-container.active {
+    top: 0;
+    opacity: 1;
+}
+
+.login-form-container form {
+    background: #fff;
+    border: var(--border);
+    width: 40rem;
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    margin: 2rem;
+}
+
+.login-form-container form h3 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color:var(--black);
+    text-align: center;
+}
+
+.login-form-container form span {
+    display: block;
+    font-size: 1.5rem;
+    padding-top: 1rem;
+}
+
+.login-form-container form .box {
+    width: 100%;
+    margin: .7rem 0;
+    font-size: 1.6rem;
+    border: var(--border);
+    border-radius: .5rem;
+    padding: 1rem 1.2rem;
+    color:var(--black);
+    text-transform: none;
+}
+
+.login-form-container form .checkbox {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: 1rem 0;
+}
+
+.login-form-container form .checkbox label {
+    font-size: 1.5rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.login-form-container form .btn {
+    text-align: center;
+    width: 100%;
+    margin: 1.5rem 0;
+}
+
+.login-form-container form p {
+    padding-top: .8rem;
+    color: var(--black);
+    font-size: 1.5rem; 
+}
+
+.login-form-container form p a {
+    color: var(--bg-purple);
+    text-decoration: underline;
+
+}
+
+.login-form-container #close-login-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 2.5rem;
+    font-size: 5rem;
+    color: var(--light-color);
+    cursor: pointer;
+}
+    
+
+
+
+/*INFORMATION*/
+
+.information {
+    max-width: 1300px;
+    margin: auto;
+    color: var(--black);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--light-color)
+}
+
+.content {
+    font-size: 20px;
+}
+
+.game-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.end {
+    font-size: 1.5rem;
+    margin-left: 70%;
+    padding: 2rem;
+
+}
+
+
+/*HOME SECTION*/
+
+.home {
+    background: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow-x: hidden;
+}
+
+.home .row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.home .row .content {
+    flex: 1 1 42rem;
+}
+
+.home .row {
+    flex: 1 1 42rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.home img {
+    width: 100%;
+    margin: 5rem 0;
+    padding: 0;
+} 
+
+.home .row .content h3 {
+    color: var(--light-color);
+    font-size: 4.5rem;
+}
+
+.home .row .content p {
+    color: var(--light-color);
+    font-size: 1.4rem;
+    line-height: 2;
+    padding: 0;
+}
+.image-home {
+    padding: 0;
+    width: 100%;
+}
+ 
+
+
+
+/*FOOTER*/
+
+.footer .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+}
+
+.footer .box-container .box h3 {
+    font-size: 2.2rem;
+    color: var(--light-color);
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a {
+    display: block;
+    font-size: 1.4rem;
+    color: var(--light-color);
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a i {
+    color: var(--gradient-1);
+    padding-right: .5rem;
+}
+
+.footer .box-container .box a:hover i {
+    padding-right: .2rem;
+}
+
+.footer .box-container .box map {
+    width: 100%;
+}
+
+.footer .share {
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.footer .share a {
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    color: #fff;
+    background: var(--gradient-1);
+    margin: 0 .3rem;
+    border-radius: 50%;
+}
+
+.footer .share a:hover {
+    background: var(--black);
+}
+
+.footer .credit {
+    border-top: var(--border);
+    margin-top: 2rem;
+    padding: 0 1rem;
+    padding-top: 2.5rem;
+    font-size: 2rem;
+    color: var(--light-color);
+    text-align: center;
+}
+
+.footer .credit span {
+    color: var(--gradient-1);
+}
+
+
+
+/*Loader*/
+
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10000;
+    background: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader-container.active {
+    display: none;
+}
+
+.loader-container img {
+    height: 10rem;
+}
+
+
+
+/* media */
+
+ 
+ @media (max-width: 911px) {
+ 
+    html {
+        font-size: 55%;
+    }
+
+    .header .header-1 {
+        padding: 2rem;
+    }
+
+    section {
+        padding: 3rem 2rem;
+    }
+
+}
+
+
+@media (max-width:768px) {
+
+    html {
+        scroll-padding-top: 0;
+    }
+
+    body {
+        padding-bottom: 6rem;
+    }
+
+    .header .header-2 {
+        display: none;
+    }
+
+    .bottom-navbar {
+        display: block;
+    }
+
+    #search-btn {
+        display: inline-block;
+    }
+
+    .header .header-1 {
+        box-shadow: var(--box-shadow);
+        position: relative;
+    }
+
+    .header .header-1 .search-form{
+        position: absolute;
+        top: -115%;
+        right: 2rem;
+        width: 90%;
+        box-shadow: var(--box-shadow);
+    }
+
+    .header .header-1 .search-form.active {
+        top: 115%;
+    }
+
+    .home .row .content {
+        text-align: center;
+    }
+    
+    .home .row .content h3 {
+        font-size: 3.5rem;
+    }
+
+    .newsletter {
+       background-position: right;
+    }
+
+    .newsletter form {
+       margin-left: 0;
+       max-width: 100%;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    html {
+        font-size: 50%;
+    }
+       
+}
+
+</style>
+
+
+
+
+</head>
+<body>
+
+
+    <!--HEADER-1-->
+
+    <header class="header">
+        <div class="header-1">
+            <a href="index.html" class="logo"><i class="fa-solid fa-gamepad"></i>Game4U</a>
+            
+            <form action="" class="search-form">
+                <input type="search" name="" placeholder="search here..." id="search-box">
+                <label for="search-box" class="fas fa-search"></label>
+            </form>
+    
+            <div class="icons">
+                <div id="search-btn" class="fas fa-search"></div>
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-shopping-cart"></a>
+                <div id="login-btn" class="fas fa-user"></div>
+            </div>
+        </div>
+    
+   
+
+    <!--HEADER-2-->
+    
+        <div class="header-2">
+            <nav class="navbar">
+                <a href="./index.html">home</a>
+                <a href="#new-release">new release </a>
+            </nav>
+        </div>
+    </header>
+
+
+
+    <!--BOTTOM-NAVBAR-->
+
+    <nav class="bottom-navbar">
+        <a href="./index.html" class="fas fa-home"></a>
+        <a href="#new-release" class="fa-solid fa-newspaper"></a>
+    </nav>
+
+
+
+
+
+    <!--LOGIN-->
+    
+    <div class="login-form-container">
+        
+        <div id="close-login-btn" class="fas fa-times"> </div>
+          
+            <form action="">
+                <h3> sign in </h3>
+                <span style="color: hsla(240, 63%, 13%, 1);"> User name</span>
+                <input type="email" class="box" name="" placeholder="Enter your email" id="">
+                <span style="color: hsla(240, 63%, 13%, 1);"> Password </span>
+                <input type="password" class="box" name="" placeholder="Enter your password" id="">
+                <div class="checkbox">
+                    <input type="checkbox" name="" id="remember-me">
+                    <label for="remember-me"> remember me </label>
+                </div>
+                <input type="submit" value="sign in" class="btn">
+                <p>Forget password ? <a href=""> click here</a></p>
+                <p>Don't have a acccount ? <a href=""> create here</a> </p> 
+            </form>
+    
+    </div>
+    
+
+     <!--HOME SECTIONS-->
+
+     <section class="home">
+
+        <div class="row">
+
+            <div class="content">
+                <h3> PUNISHING GRAY RAVEN </h3>
+                <p>
+                    Join with us now
+                </p>
+                <a href="#" class="btn"> Join now </a>
+            </div>
+
+        </div>
+        
+        <div class="image-home" >
+            <img src="./PGR3.png">
+        </div>
+        
+
+    </section>
+    
+
+
+
+    <!--INFORMATION-->
+
+
+
+    <section>
+        <div class="information" id="information">
+            <div class="title"> ABOUT US </div>
+            <img src="./New-release1.jpg" alt="The Last of Us" class="game-image">
+            <div class="content">
+                (Chinese: 战双帕弥什) is a mobile action role-playing game developed and published by Kuro Game. 
+                It was first released in China on December 5, 2019 and a year later on December 4, 2020 in Japan. 
+                The game was released globally on July 16, 2021   
+            </div>  
+            <div class="title"> GAMEPLAY </div>      
+            <div class="content">
+                <video class="game-image" autoplay muted>
+                    <source src="./y2mate.bz - 【GhostFinal】HIKARI 「Punishing_ Gray Raven OST - 九龙环城」 【パニシング_グレイレイヴン】Official.mp4" type="video/mp4">
+                </video>
+
+                Punishing: Gray Raven has players control a squad of up to three characters, known as "Constructs", against various enemies. 
+                Storytelling is presented in a visual novel format, while combat is hack and slash action-based, with the player fighting enemies in real-time in various stages. 
+                During combat, different colored "Pings" can be obtained, which will fire off different skills. Chaining 3 Pings with the same color will execute a powerful version of that skill. 
+                Players may also evade enemy attacks, which will trigger a bullet time effect called Matrix upon successful evasion, slowing down time and allowing the player to land additional hits 
+                to the enemy or take better position along with giving next used orb temporarily ability to activate 3-ping version.[3] Evading attacks will consume stamina, which prevents players from freely dodging all the time (visually stamina bar is dodge button's outline).
+                Constructs can be strengthened by leveling up and promoting them, as well as leveling weapons and equipping "memories" (which add pure stats to character, also majority of them have special effects upon equip 2, 4 and 6 pieces). Players can unlock additional 
+                Constructs by advancing the story, and more Constructs can be obtained via a gacha mechanic and in-game events. In-game currencies can be obtained through in-app purchases and playing the game, which are used to obtain Constructs and equipment through the gacha system. 
+                A pity system ensures that the player will receive rare items after a set number of pulls (60 or ~80-100, depends on banner type).
+                The game also features a housing system in the form of Dormitories. Players may decorate and move in Constructs to their dorms to improve their mood. Constructs can also be assigned chores to obtain in-game materials.
+
+            </div>
+    
+            
+            <div class="end">
+                <b>KURO GAME</b>
+            </div>
+
+        </div>
+
+        
+    </section>
+
+
+
+    <!--Footer section -->
+
+    <section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>Our locations </h3>
+            <a href="#"> <i class="fas fa-map-marker-alt"> </i> VietNam </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"> </i> USA</a>  
+            <a href="#"> <i class="fas fa-map-marker-alt"> </i> China</a>
+            <a href="#"> <i class="fas fa-map-marker-alt"> </i> Korea</a>
+            <a href="#"> <i class="fas fa-map-marker-alt"> </i> Japan</a>
+        </div>
+
+        <div class="box">
+            <h3> quick links </h3>
+            <a href="./index.html"> <i class="fas fa-arrow-right"> </i> home </a>
+            <a href="#new-release"> <i class="fas fa-arrow-right"> </i> new release </a>  
+        </div>
+
+        <div class="box">
+            <h3> extra links </h3>
+            <a href="#"> <i class="fas fa-arrow-right"> </i> account info </a>
+            <a href="#"> <i class="fas fa-arrow-right"> </i> privacy policy </a>
+            <a href="#"> <i class="fas fa-arrow-right"> </i> payment method </a>
+            <a href="#"> <i class="fas fa-arrow-right"> </i> our services </a>  
+        </div>
+
+        <div class="box">
+            <h3> contact info  </h3>
+            <a href="#"> <i class="fas fa-phone"> </i> +363 - 802 - 542  </a>
+            <a href="#"> <i class="fas fa-phone"> </i> +167 - 665 - 8824 </a>
+            <a href="#"> <i class="fas fa-envelope"> </i> binhthanhlo0111@gmail.com </a>
+            <img src="./map.jpg" style="height: 200px; width: 400px;" alt="" class="map">
+        </div>
+
+        <div class="share">
+            <a href="#"> <i class="fa-brands fa-facebook"> </i> </a>
+            <a href="#"> <i class="fa-brands fa-google"> </i> </a>
+            <a href="#"> <i class="fa-brands fa-instagram"> </i> </a>
+            <a href="#"> <i class="fa-brands fa-linkedin"> </i> </a>
+            <a href="#"> <i class="fa-brands fa-pinterest"> </i> </a>  
+        </div>
+
+        <div class="credit"> 1771020084 <span> binhdepzai </span> |Plz!| </div>
+    </div>
+    </section>
+
+
+
+    <!--Loader-->
+
+    <div class="loader-container">
+    <img src="./Loader.gif" alt="">
+    </div>
+    
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="./java.js"></script>
+</body>
+</html>

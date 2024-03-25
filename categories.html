@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./moew3.jpg">
+    <title>Sport games</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+<style>
+*{
+    font-family: 'Poppins', sans-serif; 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+    transition:width none;
+}
+
+body {
+    background: url(./backgroundcategories1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+:root{
+    --gradient-1: linear-gradient(to right, #ec733f 0%, #5213c6 100%); 
+    --gradient-2: linear-gradient(to right, #d746b3 0%, #370459 100%); 
+    --gradient-3: linear-gradient(90deg, transparent 0%, #9841ff 50%, transparent 100%);
+    --black:#444;
+    --light-color:#fffafa;
+    --border: 1rem solid rgba(0,0,0,.1);
+    --border-hover: .1rem solid var(black);
+    --box-shadow: 0 .5rem 1re, rgba(0,0,0,.1);
+
+
+    --bg-purple-alpha-30: hsla(267, 100%, 63%, 0.3);
+    --bg-purple: rgb(246, 255, 66);
+    --bg-dark-purple: hsla(279, 42%, 9%, 1);
+    --bg-oxford-blue: rgb(255, 153, 0);
+}
+
+html {
+    font-size: 62, 5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    width: 1rem;
+}
+
+html::-webkit-scroolbar-track {
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--black);
+}
+
+
+section {
+    padding: 5rem 9%;
+}
+
+.heading {
+   text-align: center;
+   margin-bottom: 2rem;
+   position: relative;
+}
+
+.heading::before {
+   content: '';
+   position: absolute;
+   top: 50%;
+   left: 0;
+   transform: translateY(-50%);
+   width: 100%;
+   height: .01rem;
+   background: rgba(0, 0, 0, .1);
+   z-index: -1;
+   
+}
+
+.heading {
+   font-size: 3rem;
+   padding: .5rem 2rem;
+   color: var(--black);
+   background: none;
+   margin-top: 20px;
+
+   /*
+   border: var(--border);
+   */
+} 
+
+span {
+    color: orange;
+}
+
+
+
+/*BTN*/
+
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    border-radius: .5rem;
+    color: #fff;
+    background: var(--gradient-1);
+    font-size: 1.7rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn:hover {
+    background: var(--gradient-2);
+}
+
+
+
+/*HEADER-1*/
+
+.header .header-1 {
+    background: var(--bg-oxford-blue);
+    padding: 1.5rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .header-1 .logo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--light-color);
+}
+
+.header .header-1 .logo i{
+    color: var(--light-color);
+}
+
+.header .header-1 .search-form {
+    width: 50rem;
+    height: 5rem;
+    border:var(--border);
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: .5rem;
+}
+
+.header .header-1 .search-form input{
+    font-size: 1.6rem;
+    padding:0 1.2rem;
+    height: 100%;
+    width: 100%;
+    text-transform: none;
+    color: var(--black);
+}
+
+.header .header-1 .search-form label {
+    font-size: 2.5rem;
+    padding-right: 1.5rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.header .header-1 .search-form label:hover { 
+    color:var(--green);
+}
+
+.header .header-1 .icons div, 
+.header .header-1 .icons a {
+    font-size:2.5rem;
+    margin-left:1.5rem;
+    color: var(--light-color);
+    cursor:pointer;
+}
+
+.header .header-1 .icons div:hover,
+.header .header-1 .icons a:hover {
+    color: var(--bg-purple);
+}
+
+#search-btn{
+    display: none;
+}
+
+
+
+
+
+/*HEADER-2*/
+
+.header .header-2 {
+    background: none;
+}
+
+.header .header-2 .navbar {
+    text-align: center;
+}
+
+.header .header-2 .navbar a{
+    color: var(--black);
+    display: inline-block;
+    padding: 1.2rem;
+    font-size: 1.7rem;
+}
+
+.header .header-2 .navbar a:hover {
+    background: var(--bg-purple);
+}
+
+.header .header-2 .active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+
+
+
+/*BOTTOM-NAVBAR*/
+ 
+ 
+.bottom-navbar {
+    text-align: center;
+    background: var(--bg-oxford-blue);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: none;
+}
+
+.bottom-navbar a {
+    font-size: 2.5rem;
+    padding: 2rem;
+    color: #fff;
+}
+
+.bottom-navbar a:hover {
+    background: var(--bg-purple);
+}
+
+
+
+
+/*LOGIN-FORM*/
+
+.login-form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ec873fc6;
+    position: fixed;
+    top: 105%; 
+    left: 0; 
+    opacity: 0;
+    z-index: 10000;
+    height: 100%;
+    width: 100%;
+}
+
+.login-form-container.active {
+    top: 0;
+    opacity: 1;
+}
+
+.login-form-container form {
+    background: #fff;
+    border: var(--border);
+    width: 40rem;
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    margin: 2rem;
+}
+
+.login-form-container form h3 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color:var(--black);
+    text-align: center;
+}
+
+.login-form-container form span {
+    display: block;
+    font-size: 1.5rem;
+    padding-top: 1rem;
+}
+
+.login-form-container form .box {
+    width: 100%;
+    margin: .7rem 0;
+    font-size: 1.6rem;
+    border: var(--border);
+    border-radius: .5rem;
+    padding: 1rem 1.2rem;
+    color:var(--black);
+    text-transform: none;
+}
+
+.login-form-container form .checkbox {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: 1rem 0;
+}
+
+.login-form-container form .checkbox label {
+    font-size: 1.5rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.login-form-container form .btn {
+    text-align: center;
+    width: 100%;
+    margin: 1.5rem 0;
+}
+
+.login-form-container form p {
+    padding-top: .8rem;
+    color: var(--black);
+    font-size: 1.5rem; 
+}
+
+.login-form-container form p a {
+    color: var(--bg-oxford-blue);
+    text-decoration: underline;
+
+}
+
+.login-form-container #close-login-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 2.5rem;
+    font-size: 5rem;
+    color: var(--black);
+    cursor: pointer;
+}
+    
+
+
+
+  
+
+
+/*FEATURED SECTION*/
+
+.featured .featured-slider .box{
+    /* width: 25rem; */
+       margin: 2rem 0;    /* Cách dòng trên */
+       position: relative;
+       overflow: hidden;
+       border: var(--border);
+       text-align: center;
+   }
+   
+   .featured .featured-slider .box:hover {
+       border: var(--border-hover);
+   }
+   
+   .featured .featured-slider .box .image {
+       padding: 0rem;
+       background: linear-gradient(15deg, #eee 30%, #fff 30.1%);
+   }
+   
+   .featured .featured-slider .box:hover .image {
+       transform: translateY(4rem);    /*Điều chỉnh ảnh và chữ khi nhấn*/
+   }
+   
+   
+   .featured .featured-slider .box img {
+       height: 15rem;    /* Chiều cao của thành phần*/
+   }
+   
+   .featured .featured-slider .box .icons {
+       padding-bottom: var(--border-hover);
+       position: absolute;
+       top: 0;
+       left: 0;
+       right: 0;
+       background: #fff;
+       z-index: 1;
+       transform: translateY(-105%);
+   }
+   
+   .featured .featured-slider .box:hover .icons {
+       transform: translateY(0%);
+   }
+   
+   .featured .featured-slider .box .icons a {
+       color: var(--black);
+       font-size: 2.2rem;
+       padding: 1.3rem 1.5rem;
+   }
+   
+   .featured .featured-slider .box .icons a:hover {
+       background: var(--green);
+       color: var(--bg-purple);
+   }
+   
+   .featured .featured-slider .box .content {
+       background: #eee;
+       padding: 1.5rem;
+   }
+   
+   .featured .featured-slider .box .content h3 {
+       font-size: 2rem;
+       color: var(--black);
+   }
+   
+   .featured .featured-slider .box .content .price {
+       font-size: 2.2rem;
+       color: var(--black);
+       padding-top: 1rem;
+   }
+   
+   .featured .featured-slider .box .content .price span {
+       font-size: 1.5rem;
+       color: red;
+       text-decoration: line-through;
+   }  
+   
+   .swiper-button-next,
+   .swiper-button-prev {
+       border: var(--border-hover);
+       height: 4rem;
+       width: 4rem;
+       color: var(--black);
+       background: #fff;
+   }
+   
+   .swiper-button-next,
+   .swiper-button-prev {
+       font-size: 2rem;
+   }
+   
+   .swiper-button-next,
+   .swiper-button-prev{
+       background: var(--black);
+       color: #fff;
+   }
+
+
+
+
+
+
+/*NEWSLETTER SECTION*/
+
+.newsletter form {
+    /* background: url(/Image/6255101.jpg); */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.newsletter form {
+    max-width: 100rem;
+    margin-left: auto;
+    text-align: center;
+    padding: 5rem 0;
+}
+ 
+.newsletter form h3 {
+    font-size: 2.2rem;
+    color: var(--black);
+    padding-bottom: .7rem;
+    font-weight: normal;
+}
+
+.newsletter form .box {
+    width: 100%;
+    margin: .7rem 0;
+    padding: 1rem 1.2rem;
+    font-size: 1.6rem;
+    color: var(--black);
+    border-radius: .5rem;
+    text-transform: none;
+}
+
+
+
+
+
+
+/*FOOTER*/
+
+.footer .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+}
+
+.footer .box-container .box h3 {
+    font-size: 2.2rem;
+    color: var(--black);
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a {
+    display: block;
+    font-size: 1.4rem;
+    color: var(--black);
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a i {
+    color: var(--gradient-1);
+    padding-right: .5rem;
+}
+
+.footer .box-container .box a:hover i {
+    padding-right: .2rem;
+}
+
+.footer .box-container .box map {
+    width: 100%;
+}
+
+.footer .share {
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.footer .share a {
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    color: #fff;
+    background: var(--gradient-1);
+    margin: 0 .3rem;
+    border-radius: 50%;
+}
+
+.footer .share a:hover {
+    background: var(--black);
+}
+
+.footer .credit {
+    border-top: var(--border);
+    margin-top: 2rem;
+    padding: 0 1rem;
+    padding-top: 2.5rem;
+    font-size: 2rem;
+    color: var(--black);
+    text-align: center;
+}
+
+.footer .credit span {
+    color: var(--gradient-1);
+}
+
+
+
+/*Loader*/
+
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10000;
+    background: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader-container.active {
+    display: none;
+}
+
+.loader-container img {
+    height: 10rem;
+}
+
+
+
+/* media */
+ 
+ @media (max-width: 911px) {
+ 
+    html {
+        font-size: 55%;
+    }
+
+    .header .header-1 {
+        padding: 2rem;
+    }
+
+    section {
+        padding: 3rem 2rem;
+    }
+
+}
+
+
+@media (max-width:768px) {
+
+    html {
+        scroll-padding-top: 0;
+    }
+
+    body {
+        padding-bottom: 6rem;
+    }
+
+    .header .header-2 {
+        display: none;
+    }
+
+    .bottom-navbar {
+        display: block;
+    }
+
+    #search-btn {
+        display: inline-block;
+    }
+
+    .header .header-1 {
+        box-shadow: var(--box-shadow);
+        position: relative;
+    }
+
+    .header .header-1 .search-form{
+        position: absolute;
+        top: -115%;
+        right: 2rem;
+        width: 90%;
+        box-shadow: var(--box-shadow);
+    }
+
+    .header .header-1 .search-form.active {
+        top: 115%;
+    }
+
+    .home .row .content {
+        text-align: center;
+    }
+    
+    .home .row .content h3 {
+        font-size: 3.5rem;
+    }
+
+    .newsletter {
+       background-position: right;
+    }
+
+    .newsletter form {
+       margin-left: 0;
+       max-width: 100%;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    html {
+        font-size: 50%;
+    }
+       
+}
+
+    </style>
+</head>
+<body>
+
+
+
+
+    <!--HEADER-1-->
+
+    <header class="header">
+        <div class="header-1">
+            <a href="index.html" class="logo"><i class="fa-solid fa-gamepad"></i>Game4U</a>
+            
+            <form action="" class="search-form">
+                <input type="search" name="" placeholder="search here..." id="search-box">
+                <label for="search-box" class="fas fa-search"></label>
+            </form>
+    
+            <div class="icons">
+                <div id="search-btn" class="fas fa-search"></div>
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-shopping-cart"></a>
+                <div id="login-btn" class="fas fa-user"></div>
+            </div>
+        </div>
+    
+   
+
+    <!--HEADER-2-->
+    
+        <div class="header-2">
+            <nav class="navbar">
+                <a href="./index.html">home</a>
+                <a href="#featured">hot games</a>
+                <a href="#support">support</a>
+            </nav>
+        </div>
+    </header>
+
+
+
+    <!--BOTTOM-NAVBAR-->
+
+    <nav class="bottom-navbar">
+        <a href="./index.html" class="fas fa-home"></a>
+        <a href="#featured" class="fa-solid fa-list"></a>
+        <a href="#support" class="fas fa-blog"></a>
+    </nav>
+
+
+
+
+
+    <!--LOGIN-->
+    
+    <div class="login-form-container">
+        
+        <div id="close-login-btn" class="fas fa-times"> </div>
+          
+            <form action="">
+                <h3> sign in </h3>
+                <span style="color: hsla(240, 63%, 13%, 1);"> User name</span>
+                <input type="email" class="box" name="" placeholder="Enter your email" id="">
+                <span style="color: hsla(240, 63%, 13%, 1);"> Password </span>
+                <input type="password" class="box" name="" placeholder="Enter your password" id="">
+                <div class="checkbox">
+                    <input type="checkbox" name="" id="remember-me">
+                    <label for="remember-me"> remember me </label>
+                </div>
+                <input type="submit" value="sign in" class="btn">
+                <p>Forget password ? <a href="./forget.html"> click here</a></p>
+                <p>Don't have a acccount ? <a href="./signup.html"> create here</a> </p> 
+            </form>
+    
+    </div>
+
+
+
+
+
+    
+
+    <!--FEATURED SECTION-->
+
+    <section class="featured" id="featured">
+
+        <h1 class="heading"> <span> SPORT </span> GAMES </h1>
+        
+        <div class="swiper featured-slider">
+    
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="" class="fas fa-search"></a>
+                        <a href="" class="fas fa-heart"></a>
+                        <a href="" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img src="./hotgame-1.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h3> No love lost </h3>
+                            <div class="price"> $15 <span> $20 </span></div>
+                            <a href="#" class="btn"> Add to cart </a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="" class="fas fa-search"></a>
+                        <a href="" class="fas fa-heart"></a>
+                        <a href="" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img src="./hotgame-2.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h3> summer house </h3>
+                            <div class="price"> $5 <span> $10 </span></div>
+                            <a href="#" class="btn"> Add to cart </a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="" class="fas fa-search"></a>
+                        <a href="" class="fas fa-heart"></a>
+                        <a href="" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img src="./hotgame-3.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h3> forza hoziron 5 </h3>
+                            <div class="price"> $30 <span> $40 </span></div>
+                            <a href="#" class="btn"> Add to cart </a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="" class="fas fa-search"></a>
+                        <a href="" class="fas fa-heart"></a>
+                        <a href="" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img src="./hotgame-4.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h3> Oxygen </h3>
+                            <div class="price"> $10 <span> $20 </span></div>
+                            <a href="#" class="btn"> Add to cart </a>
+                    </div>
+                </div>
+
+
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="" class="fas fa-search"></a>
+                        <a href="" class="fas fa-heart"></a>
+                        <a href="" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img src="./hotgame-5.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h3> Warframe </h3>
+                            <div class="price"> Free to play <span> </span></div>
+                            <a href="#" class="btn"> Add to cart </a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="" class="fas fa-search"></a>
+                        <a href="" class="fas fa-heart"></a>
+                        <a href="" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img src="./hotgame-6.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h3> Duelist of eden </h3>
+                            <div class="price"> $10 <span> $20 </span></div>
+                            <a href="#" class="btn"> Add to cart </a>
+                    </div>
+                </div>
+
+            </div>
+         
+        </div>
+
+
+        <div class="swiper featured-slider">
+    
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="" class="fas fa-search"></a>
+                        <a href="" class="fas fa-heart"></a>
+                        <a href="" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img src="./hotgame-1.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h3> No love lost </h3>
+                            <div class="price"> $15 <span> $20 </span></div>
+                            <a href="#" class="btn"> Add to cart </a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="" class="fas fa-search"></a>
+                        <a href="" class="fas fa-heart"></a>
+                        <a href="" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img src="./hotgame-2.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h3> summer house </h3>
+                            <div class="price"> $5 <span> $10 </span></div>
+                            <a href="#" class="btn"> Add to cart </a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="" class="fas fa-search"></a>
+                        <a href="" class="fas fa-heart"></a>
+                        <a href="" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img src="./hotgame-3.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h3> forza hoziron 5 </h3>
+                            <div class="price"> $30 <span> $40 </span></div>
+                            <a href="#" class="btn"> Add to cart </a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="" class="fas fa-search"></a>
+                        <a href="" class="fas fa-heart"></a>
+                        <a href="" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img src="./hotgame-4.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h3> Oxygen </h3>
+                            <div class="price"> $10 <span> $20 </span></div>
+                            <a href="#" class="btn"> Add to cart </a>
+                    </div>
+                </div>
+
+
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="" class="fas fa-search"></a>
+                        <a href="" class="fas fa-heart"></a>
+                        <a href="" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img src="./hotgame-5.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h3> Warframe </h3>
+                            <div class="price"> Free to play <span> </span></div>
+                            <a href="#" class="btn"> Add to cart </a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="" class="fas fa-search"></a>
+                        <a href="" class="fas fa-heart"></a>
+                        <a href="" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img src="./hotgame-6.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h3> Duelist of eden </h3>
+                            <div class="price"> $10 <span> $20 </span></div>
+                            <a href="#" class="btn"> Add to cart </a>
+                    </div>
+                </div>
+
+            </div>
+         
+        </div>
+
+
+        <div class="swiper featured-slider">
+    
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="" class="fas fa-search"></a>
+                        <a href="" class="fas fa-heart"></a>
+                        <a href="" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img src="./hotgame-1.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h3> No love lost </h3>
+                            <div class="price"> $15 <span> $20 </span></div>
+                            <a href="#" class="btn"> Add to cart </a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="" class="fas fa-search"></a>
+                        <a href="" class="fas fa-heart"></a>
+                        <a href="" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img src="./hotgame-2.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h3> summer house </h3>
+                            <div class="price"> $5 <span> $10 </span></div>
+                            <a href="#" class="btn"> Add to cart </a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="" class="fas fa-search"></a>
+                        <a href="" class="fas fa-heart"></a>
+                        <a href="" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img src="./hotgame-3.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h3> forza hoziron 5 </h3>
+                            <div class="price"> $30 <span> $40 </span></div>
+                            <a href="#" class="btn"> Add to cart </a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="" class="fas fa-search"></a>
+                        <a href="" class="fas fa-heart"></a>
+                        <a href="" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img src="./hotgame-4.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h3> Oxygen </h3>
+                            <div class="price"> $10 <span> $20 </span></div>
+                            <a href="#" class="btn"> Add to cart </a>
+                    </div>
+                </div>
+
+
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="" class="fas fa-search"></a>
+                        <a href="" class="fas fa-heart"></a>
+                        <a href="" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img src="./hotgame-5.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h3> Warframe </h3>
+                            <div class="price"> Free to play <span> </span></div>
+                            <a href="#" class="btn"> Add to cart </a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="" class="fas fa-search"></a>
+                        <a href="" class="fas fa-heart"></a>
+                        <a href="" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img src="./hotgame-6.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h3> Duelist of eden </h3>
+                            <div class="price"> $10 <span> $20 </span></div>
+                            <a href="#" class="btn"> Add to cart </a>
+                    </div>
+                </div>
+
+            </div>
+         
+        </div>
+
+    </section>
+
+
+
+    
+
+
+
+
+
+
+
+    <!--NEWLETTER SECTION-->
+
+
+    <section class="newsletter" id="support">
+
+    <form action="">
+        <h3> Have a problem? </h3>
+        <input type="email" class="box" placeholder="Enter ur email">
+        <input type="text" class="box" placeholder="....">
+        <input type="submit" class="btn" value="send"  onclick="gui()">>
+    </form>
+
+    </section>
+
+
+
+
+
+
+    <!--Footer section -->
+
+    <section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>Our locations </h3>
+            <a href="#"> <i class="fas fa-map-marker-alt"> </i> VietNam </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"> </i> USA</a>  
+            <a href="#"> <i class="fas fa-map-marker-alt"> </i> China</a>
+            <a href="#"> <i class="fas fa-map-marker-alt"> </i> Korea</a>
+            <a href="#"> <i class="fas fa-map-marker-alt"> </i> Japan</a>
+        </div>
+
+        <div class="box">
+            <h3> quick links </h3>
+            <a href="index.html"> <i class="fas fa-arrow-right"> </i> home </a>
+            <a href="#featured"> <i class="fas fa-arrow-right"> </i> sport games </a>
+            <a href="#support"> <i class="fas fa-arrow-right"> </i> community </a> 
+        </div>
+
+        <div class="box">
+            <h3> extra links </h3>
+            <a href="#"> <i class="fas fa-arrow-right"> </i> account info </a>
+            <a href="#"> <i class="fas fa-arrow-right"> </i> privacy policy </a>
+            <a href="#"> <i class="fas fa-arrow-right"> </i> payment method </a>
+            <a href="#"> <i class="fas fa-arrow-right"> </i> our services </a>  
+        </div>
+
+        <div class="box">
+            <h3> contact info  </h3>
+            <a href="#"> <i class="fas fa-phone"> </i> +363 - 802 - 542  </a>
+            <a href="#"> <i class="fas fa-phone"> </i> +167 - 665 - 8824 </a>
+            <a href="#"> <i class="fas fa-envelope"> </i> binhthanhlo0111@gmail.com </a>
+            <img src="./map.jpg" style="height: 200px; width: 400px;" alt="" class="map">
+        </div>
+
+        <div class="share">
+            <a href="#"> <i class="fa-brands fa-facebook"> </i> </a>
+            <a href="#"> <i class="fa-brands fa-google"> </i> </a>
+            <a href="#"> <i class="fa-brands fa-instagram"> </i> </a>
+            <a href="#"> <i class="fa-brands fa-linkedin"> </i> </a>
+            <a href="#"> <i class="fa-brands fa-pinterest"> </i> </a>  
+        </div>
+
+        <div class="credit"> 1771020084 <span> binhdepzai </span> |Plz!| </div>
+    </div>
+    </section>
+
+
+
+    <!--Loader-->
+
+    <div class="loader-container">
+    <img src="./Loader.gif" alt="">
+    </div>
+    
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+
+/*SEARCH*/ 
+searchForm = document.querySelector('.search-form');
+
+document.querySelector('#search-btn').onclick = () =>{
+    searchForm.classList.toggle('active');
+}
+
+/*HEADER*/
+window.onscroll = () =>{
+
+    searchForm.classList.remove('active');
+    
+    if(window.scrollY > 80) {
+        document.querySelector('.header ,header-2').classList.add('active');
+    }
+    else{
+        document.querySelector('.header ,header-2').classList.remove('active');
+    }
+}
+
+window.onload = () =>{
+
+    if(window.scrollY > 80){
+        document.querySelector('.header .header-2').classList.add('active');
+    }
+    else{
+        document.querySelector('.header .header-2').classList.remove('active');
+    }
+
+  fadeOut();
+}
+
+
+/*LOGIN*/
+let loginForm = document.querySelector('.login-form-container');
+
+document.querySelector('#login-btn').onclick = () =>{
+    loginForm.classList.toggle('active');
+}
+
+document.querySelector('#close-login-btn').onclick = () =>{
+    loginForm.classList.remove('active');
+}
+
+
+
+
+
+/*FEATURED SECTION */
+
+var swiper = new Swiper(".featured-slider", {
+    spaceBetween: 10,
+    loop: true,
+    autoplay: {
+        delay: 9500,
+        disableOnInteraction: false,
+    },
+    centeredSlides: true,
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      450: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 3,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
+  });
+
+
+
+
+
+
+  /* LOADER */
+
+ function loader() {
+    document.querySelector('.loader-container').classList.add('active');
+  } 
+  
+  function fadeOut() {
+    setTimeout(loader, 1000);
+  } 
+
+
+  /* ALERT */
+
+  let gui = () => {
+    alert("Thanks for telling us");
+  }
+
+
+
+
+</script>
+</body>
+</html>

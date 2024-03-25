@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./moew3.jpg">
+    <title> News </title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+
+<style>
+*{
+    font-family: 'Poppins', sans-serif; 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+    transition:width none;
+}
+
+body {
+    background: url(./body-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+:root{
+    --gradient-1: linear-gradient(to right, #ec733f 0%, #5213c6 100%); 
+    --gradient-2: linear-gradient(to right, #d746b3 0%, #370459 100%); 
+    --gradient-3: linear-gradient(90deg, transparent 0%, #9841ff 50%, transparent 100%);
+    --black:#444;
+    --light-color:#fffafa;
+    --border: 1rem solid rgba(0,0,0,.1);
+    --border-hover: .1rem solid var(black);
+    --box-shadow: 0 .5rem 1re, rgba(0,0,0,.1);
+
+
+    --bg-purple-alpha-30: hsla(267, 100%, 63%, 0.3);
+    --bg-purple: hsla(267, 100%, 63%, 1);
+    --bg-dark-purple: hsla(279, 42%, 9%, 1);
+    --bg-oxford-blue: hsla(240, 63%, 13%, 1);
+}
+
+html {
+    font-size: 62, 5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    width: 1rem;
+}
+
+html::-webkit-scroolbar-track {
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--black);
+}
+
+
+section {
+    padding: 5rem 9%;
+}
+
+.heading {
+   text-align: center;
+   margin-bottom: 2rem;
+   position: relative;
+}
+
+.heading::before {
+   content: '';
+   position: absolute;
+   top: 50%;
+   left: 0;
+   transform: translateY(-50%);
+   width: 100%;
+   height: .01rem;
+   background: rgba(0, 0, 0, .1);
+   z-index: -1;
+}
+
+.heading {
+   font-size: 3rem;
+   padding: .5rem 2rem;
+   color: var(--light-color);
+   background: none;
+
+   /*
+   border: var(--border);
+   */
+} 
+
+span {
+    color: var(--bg-purple);
+}
+
+
+
+/*BTN*/
+
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    border-radius: .5rem;
+    color: #fff;
+    background: var(--gradient-1);
+    font-size: 1.7rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn:hover {
+    background: var(--gradient-2);
+}
+
+
+
+/*HEADER-1*/
+
+.header .header-1 {
+    background: var(--bg-oxford-blue);
+    padding: 1.5rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .header-1 .logo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--light-color);
+}
+
+.header .header-1 .logo i{
+    color: var(--light-color);
+}
+
+.header .header-1 .search-form {
+    width: 50rem;
+    height: 5rem;
+    border:var(--border);
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: .5rem;
+}
+
+.header .header-1 .search-form input{
+    font-size: 1.6rem;
+    padding:0 1.2rem;
+    height: 100%;
+    width: 100%;
+    text-transform: none;
+    color: var(--black);
+}
+
+.header .header-1 .search-form label {
+    font-size: 2.5rem;
+    padding-right: 1.5rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.header .header-1 .search-form label:hover { 
+    color: var(--gradient-1);
+}
+
+.header .header-1 .icons div, 
+.header .header-1 .icons a {
+    font-size:2.5rem;
+    margin-left:1.5rem;
+    color: var(--light-color);
+    cursor:pointer;
+}
+
+.header .header-1 .icons div:hover,
+.header .header-1 .icons a:hover {
+    color: var(--bg-purple);
+}
+
+#search-btn{
+    display: none;
+}
+
+
+
+
+
+/*HEADER-2*/
+
+.header .header-2 {
+    background: none;
+}
+
+.header .header-2 .navbar {
+    text-align: center;
+}
+
+.header .header-2 .navbar a{
+    color: #fff;
+    display: inline-block;
+    padding: 1.2rem;
+    font-size: 1.7rem;
+}
+
+.header .header-2 .navbar a:hover {
+    background: var(--bg-purple);
+}
+
+.header .header-2 .active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+
+
+
+/*BOTTOM-NAVBAR*/
+ 
+ 
+.bottom-navbar {
+    text-align: center;
+    background: var(--bg-oxford-blue);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: none;
+}
+
+.bottom-navbar a {
+    font-size: 2.5rem;
+    padding: 2rem;
+    color: #fff;
+}
+
+.bottom-navbar a:hover {
+    background: var(--bg-purple);
+}
+
+
+
+
+/*LOGIN-FORM*/
+
+.login-form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(./body-bg.jpg);
+    position: fixed;
+    top: 105%; 
+    left: 0; 
+    opacity: 0;
+    z-index: 10000;
+    height: 100%;
+    width: 100%;
+}
+
+.login-form-container.active {
+    top: 0;
+    opacity: 1;
+}
+
+.login-form-container form {
+    background: #fff;
+    border: var(--border);
+    width: 40rem;
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    margin: 2rem;
+}
+
+.login-form-container form h3 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color:var(--black);
+    text-align: center;
+}
+
+.login-form-container form span {
+    display: block;
+    font-size: 1.5rem;
+    padding-top: 1rem;
+}
+
+.login-form-container form .box {
+    width: 100%;
+    margin: .7rem 0;
+    font-size: 1.6rem;
+    border: var(--border);
+    border-radius: .5rem;
+    padding: 1rem 1.2rem;
+    color:var(--black);
+    text-transform: none;
+}
+
+.login-form-container form .checkbox {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: 1rem 0;
+}
+
+.login-form-container form .checkbox label {
+    font-size: 1.5rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.login-form-container form .btn {
+    text-align: center;
+    width: 100%;
+    margin: 1.5rem 0;
+}
+
+.login-form-container form p {
+    padding-top: .8rem;
+    color: var(--black);
+    font-size: 1.5rem; 
+}
+
+.login-form-container form p a {
+    color: var(--bg-purple);
+    text-decoration: underline;
+
+}
+
+.login-form-container #close-login-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 2.5rem;
+    font-size: 5rem;
+    color: var(--light-color);
+    cursor: pointer;
+}
+    
+
+
+
+/*ABOUT*/
+
+.information {
+    max-width: 1300px;
+    margin: auto;
+    color: var(--black);
+    background-color: rgba(230, 230, 230, 0.763);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.content {
+    font-size: 16px;
+}
+
+.game-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.end {
+    font-size: 1.5rem;
+    margin-left: 70%;
+    padding: 2rem;
+
+}
+
+.icon {
+    font-size:2.5rem;
+    padding: 1rem;
+    color: #fff;
+    cursor:pointer;
+}
+
+.icon a:hover {
+    color: var(--bg-purple-alpha-30);
+}
+
+
+
+
+
+
+/*BLOGS SECTION*/
+
+.blogs .blogs-slider .box {
+    margin: 2rem 0;
+    border: var(--border);
+}
+
+.blogs .blogs-slider .box:hover {
+    border: var(--border-hover);
+}
+
+.blogs .blogs-slider .box .image {
+    height: 25rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.blogs .blogs-slider .box .image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.blogs .blogs-slider .box:hover .image img {
+    transform: scale(1.1);
+}
+
+.blogs .blogs-slider .box .content {
+    padding: 1.5rem;
+}
+
+.blogs .blogs-slider .box .content h3 {
+    font-size: 2.2rem;
+    color: white;
+}
+
+.blogs .blogs-slider .box .content p {
+    font-size: 1.4rem;
+    color: var(--light-color);
+    padding: 1rem 0;
+    line-height: 2;
+}
+
+
+
+
+
+
+
+/*Review-section*/
+
+#user {
+    font-weight: bold;
+}
+.user-review {
+    background-color: #2c2f33;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 1400px;
+    margin: auto;
+    color: white;
+    background-color: #333;
+   /* padding: 20px;
+    display: flex;*/
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;   
+    margin-bottom: 10px;
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+}
+
+.username {
+    margin: 0;
+    font-weight: bold;
+}
+
+.review-time {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.review-content {
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*NEWSLETTER SECTION*/
+
+.newsletter form {
+    /* background: url(/Image/6255101.jpg); */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.newsletter form {
+    max-width: 100rem;
+    margin-left: auto;
+    text-align: center;
+    padding: 5rem 0;
+}
+ 
+.newsletter form h3 {
+    font-size: 2.2rem;
+    color:#fff;
+    padding-bottom: .7rem;
+    font-weight: normal;
+}
+
+.newsletter form .box {
+    width: 100%;
+    margin: .7rem 0;
+    padding: 1rem 1.2rem;
+    font-size: 1.6rem;
+    color: var(--black);
+    border-radius: .5rem;
+    text-transform: none;
+}
+
+
+
+
+
+
+/*FOOTER*/
+
+.footer .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+}
+
+.footer .box-container .box h3 {
+    font-size: 2.2rem;
+    color: var(--light-color);
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a {
+    display: block;
+    font-size: 1.4rem;
+    color: var(--light-color);
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a i {
+    color: var(--gradient-1);
+    padding-right: .5rem;
+}
+
+.footer .box-container .box a:hover i {
+    padding-right: .2rem;
+}
+
+.footer .box-container .box map {
+    width: 100%;
+}
+
+.footer .share {
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.footer .share a {
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    color: #fff;
+    background: var(--gradient-1);
+    margin: 0 .3rem;
+    border-radius: 50%;
+}
+
+.footer .share a:hover {
+    background: var(--black);
+}
+
+.footer .credit {
+    border-top: var(--border);
+    margin-top: 2rem;
+    padding: 0 1rem;
+    padding-top: 2.5rem;
+    font-size: 2rem;
+    color: var(--light-color);
+    text-align: center;
+}
+
+.footer .credit span {
+    color: var(--gradient-1);
+}
+
+
+
+/*Loader*/
+
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10000;
+    background: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader-container.active {
+    display: none;
+}
+
+.loader-container img {
+    height: 10rem;
+}
+
+
+
+/* media */
+
+ 
+ @media (max-width: 911px) {
+ 
+    html {
+        font-size: 55%;
+    }
+
+    .header .header-1 {
+        padding: 2rem;
+    }
+
+    section {
+        padding: 3rem 2rem;
+    }
+
+}
+
+
+@media (max-width:768px) {
+
+    html {
+        scroll-padding-top: 0;
+    }
+
+    body {
+        padding-bottom: 6rem;
+    }
+
+    .header .header-2 {
+        display: none;
+    }
+
+    .bottom-navbar {
+        display: block;
+    }
+
+    #search-btn {
+        display: inline-block;
+    }
+
+    .header .header-1 {
+        box-shadow: var(--box-shadow);
+        position: relative;
+    }
+
+    .header .header-1 .search-form{
+        position: absolute;
+        top: -115%;
+        right: 2rem;
+        width: 90%;
+        box-shadow: var(--box-shadow);
+    }
+
+    .header .header-1 .search-form.active {
+        top: 115%;
+    }
+
+    .home .row .content {
+        text-align: center;
+    }
+    
+    .home .row .content h3 {
+        font-size: 3.5rem;
+    }
+
+    .newsletter {
+       background-position: right;
+    }
+
+    .newsletter form {
+       margin-left: 0;
+       max-width: 100%;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    html {
+        font-size: 50%;
+    }
+       
+}
+
+</style>
+
+
+
+
+</head>
+<body>
+
+
+    <!--HEADER-1-->
+
+    <header class="header">
+        <div class="header-1">
+            <a href="index.html" class="logo"><i class="fa-solid fa-gamepad"></i>Game4U</a>
+            
+            <form action="" class="search-form">
+                <input type="search" name="" placeholder="search here..." id="search-box">
+                <label for="search-box" class="fas fa-search"></label>
+            </form>
+    
+            <div class="icons">
+                <div id="search-btn" class="fas fa-search"></div>
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-shopping-cart"></a>
+                <div id="login-btn" class="fas fa-user"></div>
+            </div>
+        </div>
+    
+   
+
+    <!--HEADER-2-->
+    
+        <div class="header-2">
+            <nav class="navbar">
+                <a href="./index.html">home</a>
+                <a href="#news">news</a>
+                <a href="#support">support</a>
+            </nav>
+        </div>
+    </header>
+
+
+
+    <!--BOTTOM-NAVBAR-->
+
+    <nav class="bottom-navbar">
+        <a href="./index.html" class="fas fa-home"></a>
+        <a href="#news" class="fa-solid fa-newspaper"></a>
+        <a href="#support" class="fas fa-blog"></a>
+    </nav>
+
+
+
+
+
+    <!--LOGIN-->
+    
+    <div class="login-form-container">
+        
+        <div id="close-login-btn" class="fas fa-times"> </div>
+          
+            <form action="">
+                <h3> sign in </h3>
+                <span style="color: hsla(240, 63%, 13%, 1);"> User name</span>
+                <input type="email" class="box" name="" placeholder="Enter your email" id="">
+                <span style="color: hsla(240, 63%, 13%, 1);"> Password </span>
+                <input type="password" class="box" name="" placeholder="Enter your password" id="">
+                <div class="checkbox">
+                    <input type="checkbox" name="" id="remember-me">
+                    <label for="remember-me"> remember me </label>
+                </div>
+                <input type="submit" value="sign in" class="btn">
+                <p>Forget password ? <a href="./forget.html"> click here</a></p>
+                <p>Don't have a acccount ? <a href="./signup.html"> create here</a> </p> 
+            </form>
+    
+    </div>
+    
+    
+
+
+
+    <!--INFORMATION-->
+
+    <section>
+        <div class="information" id="information">
+            <div class="title"> Elden Ring Player Draws 40 Different Characters to Kill Time Until Shadow of the Erdtree</div>
+            <div class="content" style="font-weight: bold;"> BINHDEPTRY - NOVEMBER 01,2024 </div>
+            <img src="./blog-4.avif" alt="The Last of Us" class="game-image">
+            <div class="content">
+                A fan of Elden Ring has found a new way to pass the time until the game's upcoming Shadow of the Erdtree expansion arrives by making character art. Their gallery of 40 different Elden Ring characters has delighted the game's community, drawing praise and attention.
+                Elden Ring has been a major hit for developer From Software, capturing the gaming world's attention ever since it was released on PC and consoles in early 2022. And now the game has re-entered the public consciousness thanks to the recent announcement of the Shadow of the Erdtree DLC's release date of June 21, 2024. Newcomers and dedicated fans alike are revisiting Elden Ring in various ways to prepare for the new content and finding inventive ways to pass the time while they wait.
+                Related
+                Elden Ring Is In a Win-Win Situation With a Beloved Shadow of the Erdtree Character
+                Elden Ring fans have been fawning over one NPC from Shadow of the Erdtree's promo materials, and the DLC will likely do the character justice.   
+            </div>  
+            <div class="title"> FAN ARTIST DRAWS 40 ELDEN RING CHARACTERS </div>
+            <div class="content"> 
+               One fan artist, who goes by x0madara0x on Reddit, decided to spend their Shadow of the Erdtree waiting period by breathing artistic life into forty Elden Ring characters. 
+               They then posted a gallery of their illustrations on the game's main subreddit, asking the community for their feedback and favorite pieces. 
+               X0madara0x illustrated many of the most iconic Elden Ring characters, including major bosses and NPCs like Malenia, Blade of Miquella; Starscourge Radahn; Ranni the Witch; and more.
+            </div>
+            <img src="./blog-5.avif" alt="The Last of Us" class="game-image">
+            
+            <div class="content">
+               The Elden Ring community reacted with delight at x0madara0x's work, praising it for its striking use of black backgrounds. 
+               Some commenters compared the work to velvet painting, a physical art style that uses black velvet as a support rather than white canvas or paper. 
+               Others noticed the deliberately limited color palette used for the illustrations, focusing mainly on yellow, gray, and red or blue that stands out brightly against the black backgrounds.
+            <video class="game-image" autoplay muted>
+                <source src="./dealvideo.webm" type="video/mp4">
+              Your browser does not support the video tag.
+              </video>
+            </div>
+    
+            <div class="content">
+                Close, Elden Ring fans also praised the artist's selection of characters and their apparent dedication to rendering a wide range of the game's cast. Players noticed that even the Elden Ring tutorial boss Soldier of Godrick was given attention. Some even joked about the character's outsized reputation, referring to the Soldier of Godrick as "Rick, Soldier of God." The character had become an in-joke among fans since the game launched, with veterans hyping up the Soldier of Godrick's supposed battle prowess to trick new players into dreading the game's very first major battle (which is optional, if a newbie chooses to skip the game's tutorial area).
+               There has been a recent resurgence in the game's popularity now that the Shadows of the Erdtree DLC draws near, and players are seeing new outpourings of creative activity, such as complex costumes to facilitate dressing up as Elden Ring's Ranni the Witch and other demonstrations of love for From Software's work
+            </div>
+            
+            <div class="end">
+                <b>BINHDEPTRY</b>
+            </div>
+
+            <div class="icon">
+                <a href="#" class="fa-solid fa-thumbs-up"></a>
+                <a href="#" class="fa-solid fa-thumbs-down"></a>
+                <a href="#" class="fa-solid fa-medal"></a>
+            </div>
+
+        </div>
+
+        
+    </section>
+
+
+    
+    
+    
+    <!--BLOGS -->
+
+
+    <section class="blogs" id="news">
+
+        <h1 class="heading"> LATEST NEWS <span>& ARTICLES </span></h1>
+        <div class="swiper blogs-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide box">
+                <div class="image">
+                    <img src="./blog-1.jpg" alt="">
+                </div>
+
+                <div class="content">
+                    <h3> Shooter action video </h3>
+                    <h1 style="color: hsla(267, 100%, 63%, 1);"> ADMIN - MAY 27,2024 </h1>
+                    <p> Compete with 100 players on a remote island. That's winner takes showdown known issue... </p>
+                    <a href="./blog1.html" class="btn"> Read more </a>
+                </div>
+            </div>
+        
+            <div class="swiper-slide box">
+                <div class="image">
+                    <img src="./blog-2.avif" alt="">
+                </div>
+
+                <div class="content">
+                    <h3> Final Fantasy 7 Rebirth Devs Detail the Challenges of Making the Game </h3>
+                    <h1 style="color: hsla(267, 100%, 63%, 1);"> LING - SEPTEMBER 20,2024 </h1>
+                    <p> Following the launch of Final Fantasy 7 Rebirth, some of the developers at Square Enix </p>
+                    <a href="#" class="btn"> Read more </a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="image">
+                    <img src="./blog-4.avif" alt="">
+                </div>
+
+                <div class="content">
+                    <h3> Elden Ring Player Draws 40 Different Characters to Kill Time Until Shadow of the Erdtree </h3>
+                    <h1 style="color: hsla(267, 100%, 63%, 1);"> BINHDEPTRY - NOVEMBER 01,2024 </h1>
+                    <p> An Elden Ring player and fan artist fills the time until the Shadow of the Erdtree DLC arrives by drawing dozens of characters from the game... </p>
+                    <a href="#" class="btn"> Read more </a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="image">
+                    <img src="./blog-5.avif" alt="">
+                </div>
+
+                <div class="content">
+                    <h3> Red Dead Redemption 2 Fan's Undead Nightmare 2 Concept Is So Good That Players Wish It Was Real </h3>
+                    <h1 style="color: hsla(267, 100%, 63%, 1);"> ADMIN - SEPTEMBER 20,2024 </h1>
+                    <p> A gamer online creates an amazing concept for a potential Red Dead Redemption 2 Undead Nightmare DLC... </p>
+                    <a href="#" class="btn"> Read more </a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="image">
+                    <img src="./blog-3.avif" alt="">
+                </div>
+
+                <div class="content">
+                    <h3> Hilarious Fallout 4 Glitch Makes Cait Use a Shotgun in a Really Weird Way </h3>
+                    <h1 style="color: hsla(267, 100%, 63%, 1);"> ADMIN - SEPTEMBER 20,2024 </h1>
+                    <p> A gamer online finds a strange glitch in Fallout 4 that causes Cait to use her shotgun in a way... </p>
+                    <a href="#" class="btn"> Read more </a>
+                </div>
+            </div>
+        
+        </div>
+    
+        </div>
+
+    </section>
+
+
+
+  <!--Reader-reviews-->
+
+  <section class="user"> 
+    <div class="heading" id="user"> TOP <span>COMMENTERS</span></div>
+   
+  <div class="user-review">
+   <div class="review-header">
+        <img src="./client-1.jpg" alt="Avatar" class="avatar">
+        <div class="user-info">
+            <h5 class="username">Đánh giá man</h5>
+            <p class="review-time">23 hours ago </p>
+        </div>
+    </div>
+    <div class="review-content">
+        <p>Ok.. We're all know that</p>
+    </div>
+</div> 
+
+<div class="user-review">
+  <div class="review-header">
+       <img src="./client-3.jpg" alt="Avatar" class="avatar">
+       <div class="user-info">
+           <h5 class="username">Tốt bụng man</h5>
+           <p class="review-time">2 weeks ago</p>
+       </div>
+   </div>
+   <div class="review-content">
+       <p>HE'S SO CRAZYYYYYY</p>
+   </div>
+   <div class="review-interaction">
+   </div>
+</div>
+
+<div class="user-review">
+    <div class="review-header">
+         <img src="./moew2.jpg" alt="Avatar" class="avatar">
+         <div class="user-info">
+             <h5 class="username">A lê lê</h5>
+             <p class="review-time">1 day ago</p>
+         </div>
+     </div>
+     <div class="review-content">
+         <p>:)))))))))))) oke </p>
+     </div>
+     <div class="review-interaction">
+     </div>
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+    <!--NEWLETTER SECTION-->
+
+    <section class="newsletter" id="support">
+
+    <form action="">
+        <h3> Have a problem? </h3>
+        <input type="email" class="box" placeholder="Enter ur email">
+        <input type="text" class="box" placeholder="....">
+        <input type="submit" class="btn" value="send"  onclick="gui()">>
+    </form>
+
+    </section>
+
+
+
+
+
+
+    <!--Footer section -->
+
+    <section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>Our locations </h3>
+            <a href="#"> <i class="fas fa-map-marker-alt"> </i> VietNam </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"> </i> USA</a>  
+            <a href="#"> <i class="fas fa-map-marker-alt"> </i> China</a>
+            <a href="#"> <i class="fas fa-map-marker-alt"> </i> Korea</a>
+            <a href="#"> <i class="fas fa-map-marker-alt"> </i> Japan</a>
+        </div>
+
+        <div class="box">
+            <h3> quick links </h3>
+            <a href="./index.html"> <i class="fas fa-arrow-right"> </i> home </a>
+            <a href="#news"> <i class="fas fa-arrow-right"> </i> news </a>  
+            <a href="#support"> <i class="fas fa-arrow-right"> </i> support </a>  
+        </div>
+
+        <div class="box">
+            <h3> extra links </h3>
+            <a href="#"> <i class="fas fa-arrow-right"> </i> account info </a>
+            <a href="#"> <i class="fas fa-arrow-right"> </i> privacy policy </a>
+            <a href="#"> <i class="fas fa-arrow-right"> </i> payment method </a>
+            <a href="#"> <i class="fas fa-arrow-right"> </i> our services </a>  
+        </div>
+
+        <div class="box">
+            <h3> contact info  </h3>
+            <a href="#"> <i class="fas fa-phone"> </i> +363 - 802 - 542  </a>
+            <a href="#"> <i class="fas fa-phone"> </i> +167 - 665 - 8824 </a>
+            <a href="#"> <i class="fas fa-envelope"> </i> binhthanhlo0111@gmail.com </a>
+            <img src="./map.jpg" style="height: 200px; width: 400px;" alt="" class="map">
+        </div>
+
+        <div class="share">
+            <a href="#"> <i class="fa-brands fa-facebook"> </i> </a>
+            <a href="#"> <i class="fa-brands fa-google"> </i> </a>
+            <a href="#"> <i class="fa-brands fa-instagram"> </i> </a>
+            <a href="#"> <i class="fa-brands fa-linkedin"> </i> </a>
+            <a href="#"> <i class="fa-brands fa-pinterest"> </i> </a>  
+        </div>
+
+        <div class="credit"> created by <span> binhdepzai </span> |Plz!| </div>
+    </div>
+    </section>
+
+
+
+    <!--Loader-->
+
+    <div class="loader-container">
+    <img src="./Loader.gif" alt="">
+    </div>
+    
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="./java.js"></script>
+</body>
+</html>
